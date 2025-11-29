@@ -98,15 +98,11 @@ export default function Projects() {
           </motion.p>
         </div>
 
-        {/* Featured Projects */}
+        {/* Featured Projects - SEM ANIMAÇÃO */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12">
-          {projects.filter(p => p.featured).slice(0, 2).map((project, index) => (
-            <motion.div
+          {projects.filter(p => p.featured).slice(0, 2).map((project) => (
+            <div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
               className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-secondary border border-border hover:border-accent-green/30 transition-all duration-500"
             >
               {/* Image */}
@@ -157,19 +153,15 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        {/* Other Projects */}
+        {/* Other Projects - SEM ANIMAÇÃO */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {projects.filter(p => !p.featured || projects.filter(x => x.featured).indexOf(p) >= 2).map((project, index) => (
-            <motion.div
+          {projects.filter(p => !p.featured || projects.filter(x => x.featured).indexOf(p) >= 2).map((project) => (
+            <div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
               className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-secondary/50 border border-border hover:border-accent-green/30 transition-all duration-500 active:scale-[0.98] sm:card-hover"
             >
               {/* Image */}
@@ -212,7 +204,7 @@ export default function Projects() {
                   )}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

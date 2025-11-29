@@ -47,13 +47,8 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 lg:order-1"
-          >
+          {/* Contact Info - SEM ANIMAÇÃO */}
+          <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-2 lg:order-1">
             {/* Info Cards */}
             <div className="space-y-3 sm:space-y-4">
               {[
@@ -75,16 +70,12 @@ export default function Contact() {
                   value: 'Brasil - Atendimento remoto',
                   href: '#',
                 },
-              ].map((item, index) => {
+              ].map((item) => {
                 const Icon = item.icon;
                 return (
-                  <motion.a
+                  <a
                     key={item.label}
                     href={item.href}
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-30px" }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
                     className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 bg-secondary/50 rounded-xl sm:rounded-2xl border border-border hover:border-accent-green/30 transition-all duration-300 group active:scale-[0.98]"
                   >
                     <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
@@ -96,7 +87,7 @@ export default function Contact() {
                         {item.value}
                       </span>
                     </div>
-                  </motion.a>
+                  </a>
                 );
               })}
             </div>
@@ -129,15 +120,10 @@ export default function Contact() {
                 })}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="order-1 lg:order-2"
-          >
+          <div className="order-1 lg:order-2">
             <form className="space-y-4 sm:space-y-6 p-5 sm:p-6 lg:p-8 bg-secondary/50 rounded-2xl sm:rounded-3xl border border-border">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
@@ -189,7 +175,7 @@ export default function Contact() {
                 <Send className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -111,17 +111,10 @@ export default function Technologies() {
           </motion.p>
         </div>
 
-        {/* Technologies Grid */}
+        {/* Technologies Grid - SEM ANIMAÇÃO */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {technologies.map((category, categoryIndex) => (
-            <motion.div
-              key={category.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: categoryIndex * 0.05 }}
-              className="group"
-            >
+          {technologies.map((category) => (
+            <div key={category.category} className="group">
               <div className="bg-secondary/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-border hover:border-accent-green/30 transition-all duration-500 h-full">
                 {/* Category Title */}
                 <h3 className={`font-mono text-${category.color} text-xs sm:text-sm mb-4 sm:mb-6 flex items-center gap-2`}>
@@ -142,17 +135,12 @@ export default function Technologies() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Marquee - Hidden on small mobile */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-12 sm:mt-16 lg:mt-20 overflow-hidden hidden sm:block"
-        >
+        <div className="mt-12 sm:mt-16 lg:mt-20 overflow-hidden hidden sm:block">
           <div className="relative">
             <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-primary-light to-transparent z-10" />
             <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-primary-light to-transparent z-10" />
@@ -173,7 +161,7 @@ export default function Technologies() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

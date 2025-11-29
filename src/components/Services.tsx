@@ -64,27 +64,6 @@ const services = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-    },
-  },
-};
-
 export default function Services() {
   return (
     <section id="servicos" className="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
@@ -123,20 +102,13 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-        >
+        {/* Services Grid - SEM ANIMAÇÃO */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <motion.div
+              <div
                 key={service.title}
-                variants={itemVariants}
                 className="group relative animated-border p-5 sm:p-6 lg:p-8 hover:bg-secondary/50 transition-all duration-500 active:scale-[0.98] sm:card-hover"
               >
                 {/* Icon */}
@@ -157,10 +129,10 @@ export default function Services() {
                   <span className="text-sm font-medium">Saiba mais</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
 
         {/* CTA */}
         <motion.div
