@@ -116,10 +116,10 @@ export default function Technologies() {
           {technologies.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: categoryIndex * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: categoryIndex * 0.05 }}
               className="group"
             >
               <div className="bg-secondary/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-5 sm:p-6 lg:p-8 border border-border hover:border-accent-green/30 transition-all duration-500 h-full">
@@ -131,18 +131,14 @@ export default function Technologies() {
                 
                 {/* Tech Items */}
                 <div className="flex flex-wrap gap-2 sm:gap-3">
-                  {category.items.map((tech, index) => (
-                    <motion.div
+                  {category.items.map((tech) => (
+                    <div
                       key={tech.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: categoryIndex * 0.1 + index * 0.05 }}
                       className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 bg-primary/50 rounded-lg sm:rounded-xl border border-border hover:border-accent-green/50 transition-all duration-300 cursor-default active:scale-95"
                     >
                       <span className="text-base sm:text-lg">{tech.icon}</span>
                       <span className="text-xs sm:text-sm font-medium text-zinc-300">{tech.name}</span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>

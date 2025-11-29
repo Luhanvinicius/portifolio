@@ -81,10 +81,10 @@ export default function Contact() {
                   <motion.a
                     key={item.label}
                     href={item.href}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: true, margin: "-30px" }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
                     className="flex items-center gap-4 sm:gap-5 p-4 sm:p-5 bg-secondary/50 rounded-xl sm:rounded-2xl border border-border hover:border-accent-green/30 transition-all duration-300 group active:scale-[0.98]"
                   >
                     <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-to-br from-accent-green/20 to-accent-cyan/20 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">

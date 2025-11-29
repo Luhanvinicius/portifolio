@@ -103,10 +103,10 @@ export default function Projects() {
           {projects.filter(p => p.featured).slice(0, 2).map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               className="group relative overflow-hidden rounded-2xl sm:rounded-3xl bg-secondary border border-border hover:border-accent-green/30 transition-all duration-500"
             >
               {/* Image */}
@@ -166,10 +166,10 @@ export default function Projects() {
           {projects.filter(p => !p.featured || projects.filter(x => x.featured).indexOf(p) >= 2).map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
               className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-secondary/50 border border-border hover:border-accent-green/30 transition-all duration-500 active:scale-[0.98] sm:card-hover"
             >
               {/* Image */}
